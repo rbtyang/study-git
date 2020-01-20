@@ -26,7 +26,7 @@
 GIT_URL=$(git remote get-url origin)
 
 
-GIT_PLTF
+GIT_PLTF=''
 if [[ $GIT_URL =~ 'github' ]]; then
 	GIT_PLTF='github'
 	GIT_IMG_FMT='https://raw.githubusercontent.com/_GIT_REPO_/_GIT_BRAN_/_IMG_PATH_'
@@ -35,7 +35,7 @@ elif [[ $GIT_URL =~ 'gitee' ]]; then
 	GIT_IMG_FMT='https://gitee.com/_GIT_REPO_/raw/_GIT_BRAN_/_IMG_PATH_'
 else
     echo ">>> GIT: undefined git platform"
-    exit 1
+    # exit 1
 fi
 echo ">>> GIT: platform -> ${GIT_PLTF}"
 echo ">>> GIT: img format -> ${GIT_IMG_FMT}"
@@ -80,8 +80,11 @@ if test ${#STAGE_FILES} -gt 0; then
 		echo -e "\n>>> STA_FILE: ${STA_FILE} ------------"
 
 		if [[ $STA_FILE =~ 'hooks' ]]; then
+			echo -e "\n>>> STA_FILE: ${STA_FILE} will be skip"
 			continue
 		fi
+
+		# exit 1
 
 		#local img
 		#- ![](assets/yoy-time-all.png)
@@ -102,7 +105,8 @@ if test ${#STAGE_FILES} -gt 0; then
 		sed -i "s/.*\!\[.*\](\(.*\)).*/![image](${GIT_IMG_RAW}\1)/g" $STA_FILE
   	done
 else
-	echo 'There are no files to check'
+	echo -e "\n>>> STA_FILE: No *.md to check, Will continue to commit"
+	# exit 1
 fi
 
 git add .
