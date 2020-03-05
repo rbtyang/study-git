@@ -1,6 +1,6 @@
 # study-git
 
-### stydy hook
+### stydy hook 
 
 - gif
 ![image](../../images/gif/53.gif)
