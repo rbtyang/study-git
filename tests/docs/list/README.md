@@ -1,6 +1,6 @@
 # study-git
 
-### stydy hook 
+### stydy hook  
 
 - gif
 ![image](https://code.aliyun.com/rbtyang/study-git/raw/master/tests/docs/list/../../images/gif/53.gif)
