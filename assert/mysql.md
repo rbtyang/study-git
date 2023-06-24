@@ -1,5 +1,3 @@
-# study-git
-
 ### stydy hook
 ![ccc333](../tests/images/png/wmk.png)
 ![aa1](../tests/images/gif/1525.gif)
